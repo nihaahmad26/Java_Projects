@@ -11,11 +11,15 @@ import com.niha.dojo.repositories.DojoRepository;
 import com.niha.dojo.repositories.NinjaRepository;
 
 @Service
-
 public class DojoService {
 	@Autowired
 	private DojoRepository dRepo;
+	
 	private NinjaRepository nRepo;
+	public DojoService(NinjaRepository repository) {
+		this.nRepo = repository;
+	}
+	
 	
 	public List<Dojo> getAllDojos(){
 		return this.dRepo.findAll();
@@ -37,9 +41,12 @@ public class DojoService {
 		return "Dojo has been deleted";
 	}
 	
-	public Ninja createdNinja(Ninja ninja) {
+	public Ninja createNinja(Ninja ninja) {
 		return this.nRepo.save(ninja);
 	}
 	
+	public List<Ninja> getAllNinjas(){
+		return this.nRepo.findAll();
+	}
 	}
 	

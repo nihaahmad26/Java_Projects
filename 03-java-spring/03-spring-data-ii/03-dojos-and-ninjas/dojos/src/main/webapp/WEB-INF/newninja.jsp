@@ -9,18 +9,21 @@
 <title>Create New Ninja</title>
 </head>
 <body>
-	<form:form method = "POST" action ="/ninjas/new"  modelAttribute="ninja">
+	<form:form method = "POST" action ="/createNinja"  modelAttribute="ninja">
 	<form:label path="firstName">First Name</form:label>
 	<form:input type="text" path="firstName"></form:input>
 
 	<form:label path="lastName">Last Name</form:label>
 	<form:input type="text" path="lastName"></form:input>
 	
+	<form:label path="age">Age</form:label>
+	<form:input type="text" path="age"></form:input>
+	
 	<form:label path="dojo">Select Dojo:</form:label>
 	<form:select path="dojo">
-		<form:option value="${dojo}"> 
-			<c:out value="${dojo.name}"></c:out>
-		</form:option>
+			<c:forEach items="${allDojos}" var="dojo"> 
+			<form:option value="${dojo.id}">${dojo.name}</form:option>
+			</c:forEach>
 	</form:select>
 	<button>Create</button>
 	</form:form>
