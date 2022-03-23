@@ -40,17 +40,6 @@ public class Product {
         
     }
 
-	public Product(Long id, String name, String description, float price, Date createdAt, Date updatedAt, List<Category> categories) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.price = price;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-		this.categories = categories;
-	}
-
 		public List<Category> getCategories() {
 		return categories;
 	}

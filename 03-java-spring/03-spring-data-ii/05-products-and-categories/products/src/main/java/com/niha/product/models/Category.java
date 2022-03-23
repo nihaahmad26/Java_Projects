@@ -42,14 +42,7 @@ public class Category {
         
     }
 
-public Category(Long id, String name, Date createdAt, Date updatedAt, List<Product> products) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-		this.products = products;
-	}
+
 
 public List<Product> getProducts() {
 		return products;
